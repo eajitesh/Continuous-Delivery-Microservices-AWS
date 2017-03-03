@@ -2,6 +2,8 @@
 
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
+[Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
