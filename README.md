@@ -1,6 +1,11 @@
 ## Deep Dive into Continuous Delivery of Microservices on AWS
 
-This project is
+This project is intended to provide information related with some of the following:
+```markdown
+# Setup Jenkins and Gitlab 
+## Setup AWS ECS 
+### Setup AWS Elastic Beanstalk
+```
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
