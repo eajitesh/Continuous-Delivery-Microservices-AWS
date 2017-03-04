@@ -38,9 +38,13 @@ The first step is to get setup with the development envitonment. We shall use D
 
 Read greater details on this page, [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
 
-### Get setup with Dockerhub and/or AWS 
+### Get setup with Dockerhub and AWS account    
 
-Next step is to create your account with image repository such as Dockerhub and AWS ECR 
+Next step is to create your account with image repository such as Dockerhub and AWS ECR. 
+
+**Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
+**AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
+
 
 
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
