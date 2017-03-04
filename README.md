@@ -45,7 +45,13 @@ Next step is to create your account with image repository such as Dockerhub and 
 1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
 2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
 
+### Get Setup with AWS ECS
 
+As part of getting setup with ECS, following needs to be done:
+1. Create a repository (EC2 Repository - ECR)
+2. Create a task definition 
+3. Create a service
+4. Create an ECS cluster
 
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -58,18 +64,6 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
