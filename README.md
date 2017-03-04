@@ -54,19 +54,4 @@ As part of getting setup with ECS, following needs to be done:
 3. Create a service
 4. Create an ECS cluster
 
-You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-**Bold** and _Italic_ and `Code` text
-
-![Image](src)
-```
-Having troubl
+[edit](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md)
