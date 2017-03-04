@@ -35,14 +35,14 @@ The first step is to get setup with the development envitonment. We shall use D
 
 Read greater details on this page, [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
 
-## Get setup with Dockerhub and AWS account    
+## Setup Dockerhub and AWS account    
 
 Next step is to create your account with image repository such as Dockerhub and AWS ECR. 
 
 1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
 2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
 
-## Get Setup with AWS ECS
+## Setup AWS ECS
 
 As part of getting setup with ECS, following needs to be done:
 
