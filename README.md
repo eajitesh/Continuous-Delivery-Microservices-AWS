@@ -54,4 +54,7 @@ As part of getting setup with ECS, following needs to be done:
 3. Create a service
 4. Create an ECS cluster
 
+Read greater details on this page, [Set up AWS ECS](http://)
+
+
 [edit](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md)
