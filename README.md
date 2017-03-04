@@ -32,9 +32,9 @@ This project is intended to provide information related with some of the followi
 
 The first step is to get setup with the development envitonment. We shall use Docker images for GitLab and Jenkins and, Docker-compose for starting/commissioning the environment. Once environment is commissioned, it would be required to login into both GitLab and Jenkins to do some of the following:
 
-1.**GitLab**: Ceate code repository
+1. **GitLab**: Ceate code repository
 
-2.**Jenkins**:Install plugins,configure system, create job, configure job  etc.  
+2. **Jenkins**:Install plugins,configure system, create job, configure job  etc.  
 
 Read greater details on this page, [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
 
@@ -42,8 +42,8 @@ Read greater details on this page, [Jenkins Gitlab with Docker Containers](https
 
 Next step is to create your account with image repository such as Dockerhub and AWS ECR. 
 
-**Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
-**AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
+1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
+2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
 
 
 
