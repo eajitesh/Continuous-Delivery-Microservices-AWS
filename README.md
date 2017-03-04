@@ -1,6 +1,6 @@
 ## Deep Dive into Continuous Delivery of Microservices on AWS
 
-This project is intended to provide information related with some of the following topics. The goal is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do startups could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
+The goal is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do startups could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
 
 
 The project would demonstrate aome of the following:
@@ -9,12 +9,17 @@ The project would demonstrate aome of the following:
 2. GitLab webhook triggers the Jenkins job 
 3. Jenkins job starts with getting code from repository, build the code, run the unit tests/integration 
 4. Once build and tests run successfully, Jenkins build the image for Microservices and push the same to either of Dockerhub or AWS ECR.
-5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (woukd run within containers) on AWS ECS Cluster or AWS Elastic Beanstalk.
+5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (woukd run within containers) on AWS ECS Cluster or AWS Elastic Beanstalk (EB).
 
 - AWS ECS Cluster: For deploying to ECS cluster, a new task definition is registered and the ECS service is updated. As a result of updating ECS service, the container using microservices image (pulled from image repository) gets started.
-- AWS Elastic Beanstalk: 
+- AWS Elastic Beanstalk: For deploying the microservices on AWS EB, the execution of EB Cli command related with deployment is executed which leads to starting of container (with microservice image) on EC2 instance on AWS EB environment.
 
+
+This project is intended to provide information related with some of the following topics.
 ```markdown
+
+
+
 1. Setup Gitlab and Jenkins (relevant plugins)
 2. Setup Dockerhub, AWS ECR
 3. Setup AWS ECS 
