@@ -2,9 +2,12 @@
 
 This project is intended to provide information related with some of the following:
 ```markdown
-# Setup Jenkins and Gitlab 
-## Setup AWS ECS 
-### Setup AWS Elastic Beanstalk
+1. Setup Gitlab and Jenkins (relevant plugins)
+2. Setup Dockerhub, AWS ECR
+2. Setup AWS ECS 
+3. Setup AWS Elastic Beanstalk 
+4. Configure Jenkins post-steps for deployment to AWS ECS
+5. Confifure Jenkins post-steps for deployment to AWS Elastic Beanstalk
 ```
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
