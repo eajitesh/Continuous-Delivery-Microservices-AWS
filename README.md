@@ -10,6 +10,10 @@ The project would demonstrate aome of the following:
 3. Jenkins job starts with getting code from repository, build the code, run the unit tests/integration 
 4. Once build and tests run successfully, Jenkins build the image for Microservices and push the same to either of Dockerhub or AWS ECR.
 5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (woukd run within containers) on AWS ECS Cluster or AWS Elastic Beanstalk.
+
+- AWS ECS Cluster: For deploying to ECS cluster, a new task definition is registered and the ECS service is updated. As a result of updating ECS service, the container using microservices image (pulled from image repository) gets started.
+- AWS Elastic Beanstalk: 
+
 ```markdown
 1. Setup Gitlab and Jenkins (relevant plugins)
 2. Setup Dockerhub, AWS ECR
