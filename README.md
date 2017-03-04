@@ -51,6 +51,6 @@ As part of getting setup with ECS, following needs to be done:
 3. Create a service
 4. Create an ECS cluster
 
-Read greater details on this page, [Set up AWS ECS](http://)
+Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
 
 
