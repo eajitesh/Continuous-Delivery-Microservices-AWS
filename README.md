@@ -1,6 +1,6 @@
 ## Deep Dive into Continuous Delivery of Microservices on AWS
 
-The goal is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do startups could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
+The goal of this project is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do **startups** could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
 
 
 The project would demonstrate aome of the following:
@@ -11,8 +11,8 @@ The project would demonstrate aome of the following:
 4. Once build and tests run successfully, Jenkins build the image for Microservices and push the same to either of Dockerhub or AWS ECR.
 5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (woukd run within containers) on AWS ECS Cluster or AWS Elastic Beanstalk (EB).
 
-- AWS ECS Cluster: For deploying to ECS cluster, a new task definition is registered and the ECS service is updated. As a result of updating ECS service, the container using microservices image (pulled from image repository) gets started.
-- AWS Elastic Beanstalk: For deploying the microservices on AWS EB, the execution of EB Cli command related with deployment is executed which leads to starting of container (with microservice image) on EC2 instance on AWS EB environment.
+- **AWS ECS Cluster**: For deploying to ECS cluster, a new task definition is registered and the ECS service is updated. As a result of updating ECS service, the container using microservices image (pulled from image repository) gets started.
+- **AWS Elastic Beanstalk**: For deploying the microservices on AWS EB, the execution of EB Cli command related with deployment is executed which leads to starting of container (with microservice image) on EC2 instance on AWS EB environment.
 
 
 This project is intended to provide information related with some of the following topics.
@@ -30,7 +30,12 @@ This project is intended to provide information related with some of the followi
 ### Setup Gitlab and Jenkins
 
 
-The first step is to get setup with the development envitonment  y which would 
+The first step is to get setup with the development envitonment. We shall use Docker images for GitLab and Jenkins and, Docker-compose for starting/commissioning the environment. Once environment is commissioned, it would be required to login into both GitLab and Jenkins to do some of the following:
+
+1.**GitLab**: Ceate code repository
+2.**Jenkins**:Install plugins,configure system, create job, configure job  etc.  
+
+
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
