@@ -1,6 +1,7 @@
 ## Deep Dive into Continuous Delivery of Microservices on AWS
 
-This project is intended to provide information related with some of the following:
+This project is intended to provide information related with some of the following topics. The goal is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do startups could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
+
 ```markdown
 1. Setup Gitlab and Jenkins (relevant plugins)
 2. Setup Dockerhub, AWS ECR
@@ -9,6 +10,10 @@ This project is intended to provide information related with some of the followi
 5. Configure Jenkins post-steps for deployment to AWS ECS
 6. Confifure Jenkins post-steps for deployment to AWS Elastic Beanstalk
 ```
+### Setup Gitlab and Jenkins
+
+
+The first step is to get setup with the envitonmeny which would 
 You can use the [editor on GitHub](https://github.com/eajitesh/cloud-native-aws-demo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
