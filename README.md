@@ -1,4 +1,4 @@
-## Deep Dive into Continuous Delivery of Microservices on AWS
+# Deep Dive into Continuous Delivery of Microservices on AWS
 
 The goal of this project is to enable developers play with continuous delivery of Microservices on cloud platforms such as AWS. Those planning to do **startups** could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
 
@@ -17,9 +17,6 @@ The project would demonstrate aome of the following:
 
 This project is intended to provide information related with some of the following topics.
 ```markdown
-
-
-
 1. Setup Gitlab and Jenkins (relevant plugins)
 2. Setup Dockerhub, AWS ECR
 3. Setup AWS ECS 
@@ -27,7 +24,7 @@ This project is intended to provide information related with some of the followi
 5. Configure Jenkins post-steps for deployment to AWS ECS
 6. Confifure Jenkins post-steps for deployment to AWS Elastic Beanstalk
 ```
-### Setup Gitlab and Jenkins
+## Setup Gitlab and Jenkins
 
 
 The first step is to get setup with the development envitonment. We shall use Docker images for GitLab and Jenkins and, Docker-compose for starting/commissioning the environment. Once environment is commissioned, it would be required to login into both GitLab and Jenkins to do some of the following:
@@ -38,14 +35,14 @@ The first step is to get setup with the development envitonment. We shall use D
 
 Read greater details on this page, [Jenkins Gitlab with Docker Containers](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/jenkins-gitlab-setup.md)
 
-### Get setup with Dockerhub and AWS account    
+## Get setup with Dockerhub and AWS account    
 
 Next step is to create your account with image repository such as Dockerhub and AWS ECR. 
 
 1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
 2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
 
-### Get Setup with AWS ECS
+## Get Setup with AWS ECS
 
 As part of getting setup with ECS, following needs to be done:
 
