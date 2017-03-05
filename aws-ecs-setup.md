@@ -76,15 +76,21 @@ In above code samples, note some of the following:
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 
 # Build the docker image
-sudo docker build -t cndemo1 /var/jenkins_home/workspace/SpringBootApp
+sudo docker build -t ImageName /var/jenkins_home/workspace/SpringBootApp
 
 # Tag the image; Push docker image into AWS ECR
-sudo docker tag cndemo1:latest 153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest
-sudo docker push 153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest
+sudo docker tag ImageName:tag 153819127898.dkr.ecr.us-west-2.amazonaws.com/ImageName:tag
+sudo docker push AWS_ECR_URL/ImageName:tag
 
 # Register task definition`
-aws ecs register-task-definition --family cndemo13 --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"AWS_ECR_URL/ImageName:Tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 
 # Update service
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
+```
+
+In above code samples, note some of the following:
+ - **Login into AWS**: One needs to login into AWS using AWS CLI commands prior to using AWS cli commands for pushing images to ECR, registering task definitiona and updating the service. One can observe that executing command such as "aws ecr get-login" leads to output of command such as following which needs to be executed for successfully logging in. The command below is sent to awslogin.sh file as shown in the command and then awslogin.sh is executed. 
+```
+docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://153819127898.dkr.ecr.us-west-2.amazonaws.com
 ```
