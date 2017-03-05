@@ -48,14 +48,20 @@ Jenkins post-steps can be configured to achieve following:
 ```
 # Build the docker image
 sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
+
 # Login into Dockerhub
 sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
+
 # Push docker image
 sudo docker push ImageName:tag
+
 # Login using AWS CLI
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
+
 # Register task definition`
 aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+
+# Update service
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
 ```
 In above code samples, note some of the following:
