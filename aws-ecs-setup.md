@@ -46,11 +46,16 @@ Jenkins post-steps can be configured to achieve following:
  1. Pushing images to Dockerhub; Register task definition; Update ECS
 
 ```
-sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
+[//] Build the docker image
+sudo docker build -t _ImageName:tag_ /var/jenkins_home/workspace/SpringBootApp
+[//] Login into Dockerhub
 sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
+[//] Push docker image
 sudo docker push ImageName:tag
+[//] Login using AWS CLI
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
-aws ecs register-task-definition --family cndemo13 --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"ajitesh/springboot-web-app:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+[//] Register task definition`
+aws ecs register-task-definition --family __taskDefinitionName__ --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"ajitesh/springboot-web-app:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 aws ecs update-service --cluster cndemo11 --service springboot-service --task-definition cndemo13 --desired-count 2
 ```
 In above code samples, ImageName:tag can be replaced with image such as ajitesh/springboot-web-app:latest
