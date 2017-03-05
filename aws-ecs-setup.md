@@ -9,6 +9,8 @@
     - Create a service
  2. Configure Jenkins build Post-steps 
 
+**Note**: For the demonstration purpose, both **Gitlab** and **Jenkins** are setup within **Docker Containers**. In real world scenario, Gitlab and Jenkins may get setup within different VMs.
+
 Before getting into the setup details, let us try and understand the solution architecture related with achieving continuous delivery of microservices with AWS ECS.
 
 ## Solution Architecture 
@@ -44,12 +46,13 @@ Jenkins post-steps can be configured to achieve following:
  1. Pushing images to Dockerhub; Register task definition; Update ECS
 
 ```
-sudo docker build -t ajitesh/springboot-web-app:latest /var/jenkins_home/workspace/SpringBootApp
-sudo docker login -u="ajitesh" -p="ndaj0916"
-sudo docker push ajitesh/springboot-web-app:latest
+sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
+sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
+sudo docker push ImageName:tag
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 aws ecs register-task-definition --family cndemo13 --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"ajitesh/springboot-web-app:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 aws ecs update-service --cluster cndemo11 --service springboot-service --task-definition cndemo13 --desired-count 2
 ```
+In above code samples, ImageName:tag can be replaced with image such as ajitesh/springboot-web-app:latest
 
 
