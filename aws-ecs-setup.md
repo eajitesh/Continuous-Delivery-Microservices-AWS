@@ -55,9 +55,13 @@ sudo docker push ImageName:tag
 # Login using AWS CLI
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 # Register task definition`
-aws ecs register-task-definition --family taskDefinitionName --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"ajitesh/springboot-web-app:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
-aws ecs update-service --cluster cndemo11 --service springboot-service --task-definition cndemo13 --desired-count 2
+aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
 ```
-In above code samples, ImageName:tag can be replaced with image such as ajitesh/springboot-web-app:latest
+In above code samples, note some of the following:
+ - **ImageName:tag** should be replaced with image such as ajitesh/springboot-web-app:latest. 
+ - **TaskDefinitionName** should be replaced with name of the task definition provided at the time of creating task definition using AWS ECS console.
+ - **ClusterName** should be replaced with name of the ECS cluster
+ - **ServiceName** should be replaced with name of the service
 
 
