@@ -34,7 +34,6 @@ In above diagram, pay attention to some of the following:
 
 ## Set ECS Service 
 ---
-
 Before configuring steps into Jenkins, following needs to be setup using AWS ECS console.
 
 ### Create a repository
@@ -42,12 +41,11 @@ Before configuring steps into Jenkins, following needs to be setup using AWS ECS
 
 ## Configure Jenkins Post-steps
 ---
-
 Jenkins post-steps can be configured to achieve following:
 
  1. Pushing images to Dockerhub; Register task definition; Update ECS
 
-```python
+```
 # Build the docker image
 sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
 # Login into Dockerhub
