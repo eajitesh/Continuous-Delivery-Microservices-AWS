@@ -43,7 +43,7 @@ Before configuring steps into Jenkins, following needs to be setup using AWS ECS
 
 Jenkins post-steps can be configured to achieve following:
 
- 1. Pushing images to Dockerhub; Register task definition; Update ECS
+### Pushing images to Dockerhub; Register task definition; Update ECS
 
 ```
 # Build the docker image
@@ -52,7 +52,7 @@ sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
 # Login into Dockerhub
 sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
 
-# Push docker image
+# Push docker image into Dockerhub
 sudo docker push ImageName:tag
 
 # Login using AWS CLI
@@ -70,4 +70,21 @@ In above code samples, note some of the following:
  - **ClusterName** should be replaced with name of the ECS cluster
  - **ServiceName** should be replaced with name of the service
 
+### Pushing images to ECR; Register the task definition ; Update the ECS service
+```
+# Login into AWS
+yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 
+# Build the docker image
+sudo docker build -t cndemo1 /var/jenkins_home/workspace/SpringBootApp
+
+# Tag the image; Push docker image into AWS ECR
+sudo docker tag cndemo1:latest 153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest
+sudo docker push 153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest
+
+# Register task definition`
+aws ecs register-task-definition --family cndemo13 --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"153819127898.dkr.ecr.us-west-2.amazonaws.com/cndemo1:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+
+# Update service
+aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
+```
