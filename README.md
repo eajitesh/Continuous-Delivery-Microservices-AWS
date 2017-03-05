@@ -50,7 +50,7 @@ Next step is to create your account with image repository such as Dockerhub and 
 3. Create an ECS cluster
 4. Create a service
 
-Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
+Read greater details on this page, [Continuous Delivery of Microservices with AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
 
 ## Setup AWS Elastic Beanstalk
 
