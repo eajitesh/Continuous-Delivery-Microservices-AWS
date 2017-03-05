@@ -43,13 +43,13 @@ Jenkins post-steps can be configured to achieve following:
 
  1. Pushing images to Dockerhub; Register task definition; Update ECS
 
-`
+```
 sudo docker build -t ajitesh/springboot-web-app:latest /var/jenkins_home/workspace/SpringBootApp
 sudo docker login -u="ajitesh" -p="ndaj0916"
 sudo docker push ajitesh/springboot-web-app:latest
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 aws ecs register-task-definition --family cndemo13 --container-definitions "[{\"name\":\"cndemo13\",\"image\":\"ajitesh/springboot-web-app:latest\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 aws ecs update-service --cluster cndemo11 --service springboot-service --task-definition cndemo13 --desired-count 2
-`
+```
 
 
