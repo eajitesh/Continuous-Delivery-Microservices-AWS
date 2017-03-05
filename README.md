@@ -54,6 +54,14 @@ Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/
 
 ## Setup AWS Elastic Beanstalk
 
+[AWS Elastic Beanstalki](https://aws.amazon.com/documentation/elastic-beanstalk/) service is used to deploy and scale web applications and services developed with Java, .NET, PHP, Nodejs, Python, Ruby, Go and Docker on servers such as Apache, Tomcat, Nginx etc. All one is required to do is simply upload their code and Elastic Beanstalk does some of the following aspect of deployment:
+
+- Capacity provisioning
+- Load balancing
+- Auto-scaling
+- Application-health monitoring
+
+Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-eb-setup.md)
 
 ## Configure Jenkins Post-Steps for Deployment to AWS ECS and AWS Elastic Beanstalk 
 
