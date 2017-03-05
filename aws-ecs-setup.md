@@ -7,7 +7,7 @@
     - Create a task definition 
     - Create an ECS cluster
     - Create a service
- 2. Configure Jenkins Post-build steps 
+ 2. Configure Jenkins build Post-steps 
 
 Before getting into the setup details, let us try and understand the solution architecture related with achieving continuous delivery of microservices with AWS ECS.
 
@@ -17,8 +17,26 @@ Following represents the solution architecture of deploying microservices using 
 
 ![Solution Architecture - Microservices to AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/images/aws_ecs.png)
 
-In above diagram, pay attention to following:
+In above diagram, pay attention to some of the following:
 
-1. Code is checked into code repository such as Gitlab
-2. Webhook configured in GitLab triggers the Jenkins job
-3. Jenkins job starts executing which results in following steps:
+ 1. Code is checked into code repository such as Gitlab
+ 2. Webhook configured in GitLab triggers the Jenkins job
+ 3. Jenkins job starts executing which results in following steps:
+    - Retrieve the microservice artifacts from Gitlab
+    - Build the microservice
+    - Run the tests such as unit and integration tests
+    - If all of the above steps are successful, build the image 
+    - Push the image to image repository such as Dockerhub or AWS ECR
+    - Register task definition with AWS ECS
+    - Update AWS ECS
+
+## Set ECS Service 
+
+Before configuring steps into Jenkins, following needs to be setup using AWS ECS console.
+
+### Create a repository
+
+
+## Configure Jenkins Post-steps
+
+
