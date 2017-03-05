@@ -21,8 +21,7 @@ This project is intended to provide information related with some of the followi
 2. Setup Dockerhub, AWS ECR
 3. Setup AWS ECS 
 4. Setup AWS Elastic Beanstalk 
-5. Configure Jenkins post-steps for deployment to AWS ECS
-6. Confifure Jenkins post-steps for deployment to AWS Elastic Beanstalk
+5. Configure Jenkins post-steps for deployment to AWS ECS and AWS Elastic Beanstalk
 ```
 ## Setup Gitlab and Jenkins
 
@@ -44,13 +43,19 @@ Next step is to create your account with image repository such as Dockerhub and 
 
 ## Setup AWS ECS
 
-[AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within DOcker containers on AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. As part of getting setup with ECS, following needs to be done:
+[AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within Docker containers on AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. As part of getting setup with ECS, following needs to be done:
 
 1. Create a repository (EC2 Repository - ECR)
 2. Create a task definition 
-3. Create a service
-4. Create an ECS cluster
+3. Create an ECS cluster
+4. Create a service
 
 Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
 
+## Setup AWS Elastic Beanstalk
+
+
+## Configure Jenkins Post-Steps for Deployment to AWS ECS and AWS Elastic Beanstalk 
+
+Final step is to configure Jenkins post-build steps to deploy microservices to either AWS ECS or AWS Elastic Beanstalk. You can find code samples and related details on this page, [Jenkins configuration for deploying microservices on AWS ECS, Beanstalk](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/configure-jenkins-ecs-eb.md)
 
