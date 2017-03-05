@@ -33,14 +33,14 @@ In above diagram, pay attention to some of the following:
     - Update AWS ECS
 
 ## Set ECS Service 
----
+
 Before configuring steps into Jenkins, following needs to be setup using AWS ECS console.
 
 ### Create a repository
 
 
 ## Configure Jenkins Post-steps
----
+
 Jenkins post-steps can be configured to achieve following:
 
  1. Pushing images to Dockerhub; Register task definition; Update ECS
