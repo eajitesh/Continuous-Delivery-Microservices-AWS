@@ -1,6 +1,6 @@
 # Deep Dive into Continuous Delivery of Microservices on AWS
 
-The goal of this project is to enable developers play with continuous delivery of microservices on cloud platforms such as AWS. Those planning to do **startups** could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
+The goal of this project is to enable developers play with continuous delivery of microservices on cloud platforms such as [Awazon Web Services (AWS)](https://aws.amazon.com/). Those planning to do **startups** could get tips and code aamples to get started with development, testing and releasing (continuously deploying) the software thereby gaining the competitive edge for their products.
 
 
 The project would demonstrate aome of the following:
@@ -8,8 +8,8 @@ The project would demonstrate aome of the following:
 1. Developers check-in the code into the code repository such as GitLab. 
 2. GitLab webhook triggers the Jenkins job 
 3. Jenkins job starts with getting code from repository, build the code, run the unit tests/integration 
-4. Once build and tests run successfully, Jenkins build the image for Microservices and push the same to either of Dockerhub or AWS ECR.
-5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (woukd run within containers) on AWS ECS Cluster or AWS Elastic Beanstalk (EB).
+4. Once build and tests run successfully, Jenkins build the image for Microservices and push the same to either of Dockerhub or [AWS ECR (EC2 Container Registry)](https://aws.amazon.com/ecr/).
+5. After the docker image for microservices is pushed to the image repository, following is done to deploy microservices (would run within containers) on [AWS EC2 Container Service (ECS) Cluster](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html) or [AWS Elastic Beanstalk (EB)](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html).
 
 - **AWS ECS Cluster**: For deploying to ECS cluster, a new task definition is registered and the ECS service is updated. As a result of updating ECS service, the container using microservices image (pulled from image repository) gets started.
 - **AWS Elastic Beanstalk**: For deploying the microservices on AWS EB, the execution of EB Cli command related with deployment is executed which leads to starting of container (with microservice image) on EC2 instance on AWS EB environment.
@@ -44,7 +44,7 @@ Next step is to create your account with image repository such as Dockerhub and 
 
 ## Setup AWS ECS
 
-As part of getting setup with ECS, following needs to be done:
+[AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within DOcker containers on AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. As part of getting setup with ECS, following needs to be done:
 
 1. Create a repository (EC2 Repository - ECR)
 2. Create a task definition 
