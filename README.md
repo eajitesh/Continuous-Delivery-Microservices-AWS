@@ -41,7 +41,7 @@ Next step is to create your account with image repository such as Dockerhub and 
 1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
 2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
 
-## Continuous Delivery of Microservices using AWS ECS
+## Continuous Delivery of Microservices on AWS using AWS ECS
 
 [AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within Docker containers on AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. As part of getting setup with ECS, following needs to be done:
 
@@ -50,13 +50,13 @@ Next step is to create your account with image repository such as Dockerhub and 
  3. Create an ECS cluster
  4. Create a service
 
-Following represents the **solution architecture** of deploying microservices using AWS ECS on AWS.
+Following represents the **solution architecture** of deploying microservices on AWS using AWS ECS.
 
 ![Solution Architecture - Microservices to AWS ECS](images/aws_ecs.png)
 
 Read greater details on this page, [Continuous Delivery of Microservices with AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
 
-## Continuous Delivery of Microservices using AWS Elastic Beanstalk
+## Continuous Delivery of Microservices on AWS using AWS Elastic Beanstalk
 
 [AWS Elastic Beanstalki](https://aws.amazon.com/documentation/elastic-beanstalk/) service is used to deploy and scale web applications and services developed with Java, .NET, PHP, Nodejs, Python, Ruby, Go and Docker on servers such as Apache, Tomcat, Nginx etc. All one is required to do is simply upload their code and Elastic Beanstalk does some of the following aspect of deployment:
 
@@ -65,9 +65,9 @@ Read greater details on this page, [Continuous Delivery of Microservices with AW
  - Auto-scaling
  - Application-health monitoring
 
-Following represents the **solution architecture** of deploying microservices using AWS ECS on AWS.
+Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk.
 
 ![Solution Architecture - Microservices to AWS Elastic Beanstalk](images/aws_eb.png)
 
-Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-eb-setup.md)
+Read greater details on this page, [Continuous delivery of Microservices on AWS using AWS Elastic Beanstalk](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-eb-setup.md)
 
