@@ -32,7 +32,7 @@ In above diagram, pay attention to some of the following:
     - Register task definition with AWS ECS
     - Update AWS ECS
 
-## Set ECS Service 
+## Setup ECS Service 
 
 Before configuring steps into Jenkins, following needs to be setup using AWS ECS console.
 
@@ -145,3 +145,6 @@ aws ecs register-task-definition --family TaskDefinitionName --container-definit
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
 ```
 
+## Reference
+
+ - [What is Amazon EC2 Container Service?](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
