@@ -38,6 +38,25 @@ Before configuring steps into Jenkins, following needs to be setup using AWS ECS
 
 ### Create a repository
 
+First step is getting setup with AWS ECR. Following command needs to be executed in order to create an ECR repository.
+```
+# Login into ECR
+aws configure
+aws ecr get-login
+docker built -t ImageName .
+docker tag ImageName:tag AWS_ECR_URL/ImageName:tag
+docker push AWS_ECR_URL/ImageName:tag
+```
+Note some of the following with above command:
+ - **AWS_ECR_URL** is of the format https://__aws_account_id__.dkr.ecr.__region__.amazonaws.com. One can get the value of Account id by logging into console and going to My Account page. Region information can be found from the [region and availability zones page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+ - **Command aws configure** is used to setup AWS CLI installation. The command would require one to enter credentials and config information before one starts working with their AWS services. The command would require one to enter details for access key ID, secret access key, default region name and default output format.
+
+The above command is a combination of commands to achieve promptless execution. 
+
+```
+yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
+```
+
 
 ## Configure Jenkins Post-steps
 
@@ -90,7 +109,7 @@ aws ecs update-service --cluster ClusterName --service ServiceName --task-defini
 ```
 
 In above code samples, note some of the following:
- - **Login into AWS**: One needs to login into AWS using AWS CLI commands prior to using AWS cli commands for pushing images to ECR, registering task definitiona and updating the service. One can observe that executing command such as "aws ecr get-login" leads to output of command such as following which needs to be executed for successfully logging in. The command below is sent to awslogin.sh file as shown in the command and then awslogin.sh is executed. 
+ - **Login into AWS**: One needs to login into AWS using AWS CLI commands prior to using AWS cli commands for pushing images to ECR, registering task definition and updating the service. One can observe that executing command such as "aws ecr get-login" leads to output of command such as following which needs to be executed for successfully logging in. The command below is sent to awslogin.sh file as shown in the command and then awslogin.sh is executed. 
 ```
 docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://153819127898.dkr.ecr.us-west-2.amazonaws.com
 ```
