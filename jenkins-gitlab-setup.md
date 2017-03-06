@@ -42,4 +42,43 @@ A Webhook needs to be created for triggering Jenkins job based on one or more ty
 
 ## Jenkins/GitLab within Docker Containers
 
-The project was executed with GitLab and Jenkins installed in seperate containers. 
+The project was executed with GitLab and Jenkins installed in seperate containers. Following docker-compose.yml file could be used to setup both Jenkins and Gitlab in seperate containers.
+```
+version: '2'
+
+networks:
+  prodnetwork:
+    driver: bridge
+
+services:
+ jenkins:
+  image: jenkins
+  ports:
+    - "18080:8080"
+  networks:
+    - prodnetwork
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/local/bin/docker:/usr/bin/docker
+    - /opt/jenkins/:/var/lib/jenkins/
+  depends_on:
+    - gitlab
+
+ gitlab:
+  image: gitlab/gitlab-ce
+  restart: always
+  networks:
+    - prodnetwork
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      # external_url 'https://gitlab.example.com'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    - "80:80"
+    - "443:443"
+    - "2222:22"
+  volumes:
+    - /opt/gitlab/config:/etc/gitlab
+    - /opt/gitlab/logs:/var/log/gitlab
+    - /opt/gitlab/data:/var/opt/gitlab
+```
