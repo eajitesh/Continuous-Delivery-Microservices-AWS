@@ -27,7 +27,7 @@ In above diagram, pay attention to some of the following:
     - Retrieve the microservice artifacts from Gitlab
     - Build the microservice
     - Run the tests such as unit and integration tests
-    - If all of the above steps are successful, build the image 
+    - Build the image if all of the above steps are successful
     - Push the image to image repository such as Dockerhub or AWS ECR
     - Register task definition with AWS ECS
     - Update AWS ECS
