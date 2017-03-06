@@ -49,7 +49,11 @@ docker push AWS_ECR_URL/ImageName:tag
 ```
 Note some of the following with above command:
  - **AWS_ECR_URL** is of the format https://__aws_account_id__.dkr.ecr.__region__.amazonaws.com. One can get the value of Account id by logging into console and going to My Account page. Region information can be found from the [region and availability zones page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
- - **Command aws configure** is used to setup AWS CLI installation. The command would require one to enter credentials and config information before one starts working with their AWS services. The command would require one to enter details for access key ID, secret access key, default region name and default output format.
+ - **Command aws configure** is used to setup AWS CLI installation. The command would require one to enter credentials and config information before one starts working with their AWS services. The command would require one to enter details for access key ID, secret access key, default region name and default output format. However, as we need to achieve this without entering details at the prompt, following needs to be done in order to achieve the promptless command such as **aws configure --profile default**
+    - Create a folder, **.aws** in the home.
+    - Create a file named as **config** with following content
+        ```
+        ```
 
 The above command is a combination of commands to achieve promptless execution. 
 
