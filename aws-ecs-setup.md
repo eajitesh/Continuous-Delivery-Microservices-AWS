@@ -36,7 +36,7 @@ In above diagram, pay attention to some of the following:
 
 Before configuring steps into Jenkins, following needs to be setup using AWS ECS console.
 
-### Create a repository
+### Create an Image Repository with AWS ECR
 
 First step is getting setup with AWS ECR. Following command needs to be executed in order to create an ECR repository.
 ```
@@ -72,9 +72,27 @@ One can observe that executing command such as "aws ecr get-login" leads to outp
 docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://**aws_account_id**.dkr.ecr.**region**.amazonaws.com
 ```
 
-### Create a repository
+### Create a Task Definition
 
-Next step is to create a task definition.
+Next step is to create a task definition. Command such as following could be used to create the task definition:
+
+```
+aws configure --profile default # Read the details under Create an Image Repository
+aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+```
+In above command, note the following two aspects:
+ - **TaskDefinitionName** which is the name of the task definition that one needs to provide
+ - **container-definitions** which is used to provide information related with one or more containers which will be started as a result of executing task based on the task definition.
+
+One may want to login  and access the AWS console at Services/EC2 Container Service/Task Definitions and try and create task definition to understand different aspects of task definition creation.
+
+### Create an ECS Cluster
+
+As this is one time activity, one may want to use AWS console at Services/EC2 Container Service/Clusters to create the cluster. It is pretty straight forward and very easy to create the cluster.
+
+### Create/Update the Service
+
+Once done with above steps
 
 
 ## Configure Jenkins Post-steps
