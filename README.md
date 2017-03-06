@@ -15,11 +15,10 @@ The project would demonstrate some of the following:
 
 This project is intended to provide information related with some of the following topics.
 ```
-1. Setup Gitlab and Jenkins (relevant plugins)
+1. Setup Gitlab and Jenkins
 2. Setup Dockerhub, AWS ECR
 3. Continuous Delivery using AWS ECS 
 4. Continuous Delivery using AWS Elastic Beanstalk 
-5. Configure Jenkins post-steps for deployment to AWS ECS and AWS Elastic Beanstalk
 ```
 ## Setup Gitlab and Jenkins
 
