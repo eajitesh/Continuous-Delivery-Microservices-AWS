@@ -10,11 +10,11 @@ We shall try and cover the use cases for both the configuration types.
 
 ## Single Container Docker
 
-Before gettiing into details and related source code, lets quickly look into solution architecture for deploying microservices on AWS using AWS Elastic Beanstalk.
+Before getting into details of single container docker configurations for Elastic Beanstalk, lets quickly look into the solution architecture for deploying microservices on AWS using AWS Elastic Beanstalk.
 
 ### Solution Architecture
 
-Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk.
+Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk using single container docker configurations.
 
 ![Solution Architecture - Microservices to AWS Elastic Beanstalk](images/aws_eb.png)
 
@@ -29,4 +29,10 @@ In the above diagram, pay attention to some of the following:
     - Build the image if all of the above steps are successful
     - Push the image to image repository such as Dockerhub or AWS ECR
     - Deploy using AWS Elastic Beanstalk CLI command 
+
+### Single Docker Container Configuration
+
+Following steps need to be taken to get setup with Elastic Beanstalk to deploy application/services/microservices from docker containers based on single docker container configuration:
+
+ 1. Create a Beanstalk application using [AWS console for creating new application](http://console.aws.amazon.com/elasticbeanstalk/home#/newApplication) 
 

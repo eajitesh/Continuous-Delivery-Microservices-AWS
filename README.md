@@ -62,7 +62,7 @@ Read further details on this page, [Continuous Delivery of Microservices with AW
  - Auto-scaling
  - Application-health monitoring
 
-Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk.
+Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk based on single container docker configurations. Note that Docker platform for Elastic Beanstalk supports two generic configurations such as single container and multicontainer.
 
 ![Solution Architecture - Microservices to AWS Elastic Beanstalk](images/aws_eb.png)
 
