@@ -1,10 +1,18 @@
-## Continuous Delivery of Microservices on AWS using AWS Elastic Beanstalk
+# Continuous Delivery of Microservices on AWS using AWS Elastic Beanstalk
 
 [AWS Elastic Beanstalk](https://aws.amazon.com/documentation/elastic-beanstalk/) service can be used to deploy and scale applications and services (from docker containers) developed with Java, .NET, PHP, Nodejs, Python, Ruby, Go etc on servers such as Apache, Tomcat, Nginx etc. Docker containers provide the flexibility of selecting one's runtime environment of choice including platform, programming language, app/services dependencies, and also, configuring the environment appropriately. All one is required to do is simply push the docker image to the image repository, and deploy the container. Elastic Beanstalk service, then, takes care of different aspects of deployment such as capacity provisioning, load balancing, auto-scaling, application/service health monitoring etc.
 
-Docker platform for Elastic Beanstalk has two generic configurations (single container and multicontainer). We shall try and cover the use cases for both the configuration types. Before gettiing into details and related source code, lets quickly look into solution architecture for deploying microservices on AWS using AWS Elastic Beanstalk.
+Docker platform for Elastic Beanstalk has two generic configurations such as following: 
+ - Single container Docker
+ - Multicontainer Docker
 
-## Solution Architecture
+We shall try and cover the use cases for both the configuration types.
+
+## Single Container Docker
+
+Before gettiing into details and related source code, lets quickly look into solution architecture for deploying microservices on AWS using AWS Elastic Beanstalk.
+
+### Solution Architecture
 
 Following represents the **solution architecture** of deploying microservices on AWS using AWS Elastic Beanstalk.
 
