@@ -1,4 +1,4 @@
-# Setting up Jenkins-Gitlab
+# Set up Jenkins-Gitlab
 
 Following are some of the key aspects of configuring Jenkins and GitLab and integrating them such that an event in GitLab will result in invocation of a Jenkins job using WebHooks.
 
@@ -25,7 +25,7 @@ Following needs to be configured within Jenkins for integrating with GitLab:
  - Configure "Source Code Management" appropriately as shown in the diagram below.
 ![Source Code Management Configuration](images/configure_scm.png)
  - Configure "Build Triggers" appropriately as shown in the diagram below.
-![Build Triggers Configuration](images/configure_built_triggers.png)
+![Build Triggers Configuration](images/configure_build_triggers.png)
 
 
 
