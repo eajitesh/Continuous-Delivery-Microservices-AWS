@@ -52,7 +52,7 @@ Next step is to create your account with image repository such as Dockerhub and 
 
 Following represents the **solution architecture** of deploying microservices using AWS ECS on AWS.
 
-![Solution Architecture - Microservices to AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/images/aws_ecs.png)
+![Solution Architecture - Microservices to AWS ECS](https://eajitesh.github.io/Continuous-Delivery-Microservices-AWS/images/aws_ecs.png)
 
 Read greater details on this page, [Continuous Delivery of Microservices with AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-ecs-setup.md)
 
