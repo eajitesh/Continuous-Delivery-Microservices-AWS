@@ -49,17 +49,32 @@ docker push AWS_ECR_URL/ImageName:tag
 ```
 Note some of the following with above command:
  - **AWS_ECR_URL** is of the format https://__aws_account_id__.dkr.ecr.__region__.amazonaws.com. One can get the value of Account id by logging into console and going to My Account page. Region information can be found from the [region and availability zones page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
- - **Command aws configure** is used to setup AWS CLI installation. The command would require one to enter credentials and config information before one starts working with their AWS services. The command would require one to enter details for access key ID, secret access key, default region name and default output format. However, as we need to achieve this without entering details at the prompt, following needs to be done in order to achieve the promptless command such as **aws configure --profile default**
+ - **aws configure** command is used to setup AWS CLI installation. The command would require one to enter credentials and config information before one starts working with their AWS services. The command would require one to enter details for access key ID, secret access key, default region name and default output format. However, as we need to achieve this without entering details at the prompt, following needs to be done in order to achieve the promptless command such as **aws configure --profile default**
     - Create a folder, **.aws** in the home.
-    - Create a file named as **config** with following content
-        ```
-        ```
+    - Create a file named as **config** within above folder, **.aws**, with following content. One could get access key id and secret access key information by logging into the AWS console and accessing "My Security Credentials".
+```
+[default]
+aws_access_key_id=AKXXIXXYXX4X4XXXXJRY
+aws_secret_access_key=DyxxxxxxeqQyxyyyyytXcwwthbbCxaaaa8Qi0y
+region=us-west-2
+output=json
+```
+ - **aws ecr get-login** command is used to get the login prompt which needs to be executed further to login (start authenticated session) into AWS ECR and thereafter, push the image.
+ - Other commands are usual commands to push the docker image to the AWS ECR image repository.
 
-The above command is a combination of commands to achieve promptless execution. 
+Executing above commands leads to user entering the details at the prompt. If one wants to achieve the same without prompt, from within Jenkins, the same could be achieved using following command which is a combination of commands to achieve promptless execution. 
 
 ```
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 ```
+One can observe that executing command such as "aws ecr get-login" leads to output of command such as following which needs to be executed for successfully logging in. The command below is sent to awslogin.sh file as shown in the command and then awslogin.sh is executed. 
+```
+docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://**aws_account_id**.dkr.ecr.**region**.amazonaws.com
+```
+
+### Create a repository
+
+Next step is to create a task definition.
 
 
 ## Configure Jenkins Post-steps
@@ -112,8 +127,3 @@ aws ecs register-task-definition --family TaskDefinitionName --container-definit
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
 ```
 
-In above code samples, note some of the following:
- - **Login into AWS**: One needs to login into AWS using AWS CLI commands prior to using AWS cli commands for pushing images to ECR, registering task definition and updating the service. One can observe that executing command such as "aws ecr get-login" leads to output of command such as following which needs to be executed for successfully logging in. The command below is sent to awslogin.sh file as shown in the command and then awslogin.sh is executed. 
-```
-docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://153819127898.dkr.ecr.us-west-2.amazonaws.com
-```
