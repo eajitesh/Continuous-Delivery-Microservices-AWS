@@ -5,6 +5,7 @@ Following are some of the key aspects of configuring Jenkins and GitLab and inte
  - Installing Jenkins Plugins
  - Configuring Jenkins
  - Configuring GitLab
+ - Setup Jenkins/GitLab within Docker Containers
 
 ## Installing Jenkins Plugins
 
@@ -40,7 +41,7 @@ A Webhook needs to be created for triggering Jenkins job based on one or more ty
 ![Gitlab Webhooks Configuration](images/configure_gitlab_webhooks.png)
 
 
-## Jenkins/GitLab within Docker Containers
+## Setup Jenkins/GitLab within Docker Containers
 
 The project was executed with GitLab and Jenkins installed in seperate containers. Following docker-compose.yml file could be used to setup both Jenkins and Gitlab in seperate containers.
 ```
