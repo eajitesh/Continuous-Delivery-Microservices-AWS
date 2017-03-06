@@ -105,7 +105,7 @@ Jenkins post-steps can be configured to achieve following:
 # Build the docker image
 sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
 
-# Login into Dockerhub
+# Login into Dockerhub; dockerhubLogin and dockerhubPassword is login and password respectively for dockerhub.com
 sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
 
 # Push docker image into Dockerhub

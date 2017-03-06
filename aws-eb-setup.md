@@ -70,19 +70,20 @@ Make sure that project folder consists of either Dockerfile or Dockerrun.aws.jso
 
 Jenkins post-steps can be configured to achieve following:
 
-### Pushing images to Dockerhub; Register task definition; Update ECS
+### Pushing images to Dockerhub; Deploy to Elastic Beanstalk
 
 ```
 # Build the docker image
 sudo docker build -t ImageName:tag /var/jenkins_home/workspace/SpringBootApp
 
-# Login into Dockerhub
+# Login into Dockerhub; dockerhubLogin and dockerhubPassword is login and password respectively for dockerhub.com
 sudo docker login -u="dockerhubLogin" -p="dockerhubPassword"
 
 # Push docker image into Dockerhub
 sudo docker push ImageName:tag
 
-# EB Deploy
+# EB Deploy; Go to the project folder and execute the command, "eb deploy"
+cd /var/jenkins_home/workspace/awsebdemo
 eb deploy
 ```
 In above code samples, note some of the following:
