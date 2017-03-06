@@ -66,6 +66,16 @@ Make sure that project folder consists of either Dockerfile or Dockerrun.aws.jso
 }
 ```
 
+### Reference
+
+ - [Elastic Beanstalk Archtectural Overview](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.concepts.architecture.html)
+ - [Deploying Elastic Beanstalk Applications from Docker Containers](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker.html)
+ - [Single Container Docker Configuration](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_image.html)
+ - [Multicontainer Docker Environments](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_ecs.html)
+ - [EB CLI Commands](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-started.html)
+ - [Elastic Beanstalk FAQs](https://aws.amazon.com/elasticbeanstalk/faqs/)
+
+
 ## Configure Jenkins Post-steps
 
 Jenkins post-steps can be configured to achieve following:
