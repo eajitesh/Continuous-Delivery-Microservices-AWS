@@ -1,3 +1,9 @@
-## Setting up Jenkins-Gitlab with Docker Containers
+# Setting up Jenkins-Gitlab with Docker Containers
 
-Let's learn how to setup a jenkins-gitlab environment with docker containers.
+Following are some of the key aspects of configuring Jenkins and GitLab and integrating them such that an event in GitLab will result in invocation of a Jenkins job using WebHooks.
+
+ - Installing Jenkins Plugins
+ - Configuring Jenkins
+ - Creating Webhooks in GitLab
+
+## Installing Jenkins Plugins
