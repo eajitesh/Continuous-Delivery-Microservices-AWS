@@ -65,5 +65,9 @@ Read greater details on this page, [Continuous Delivery of Microservices with AW
  - Auto-scaling
  - Application-health monitoring
 
+Following represents the **solution architecture** of deploying microservices using AWS ECS on AWS.
+
+![Solution Architecture - Microservices to AWS Elastic Beanstalk](images/aws_eb.png)
+
 Read greater details on this page, [Set up AWS ECS](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/aws-eb-setup.md)
 
