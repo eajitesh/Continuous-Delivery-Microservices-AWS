@@ -1,6 +1,6 @@
 # Continuous Delivery of Microservices with AWS ECS
 
-[AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within Docker containers on AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. In order to achieve the same, following needs to be done:
+[AWS EC2 Container Service (ECS)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) is a highly scalable container management service which is used to start, stop and run microservices within Docker containers on  a cluster of AWS EC2 instances. In this project, it is demonstrated as to how to deploy container-based microservices using CLI commands from within Jenkins. In order to achieve the same, following needs to be done:
 
  1. Setup ECS Service
     - Create a repository (EC2 Repository - ECR)
@@ -84,7 +84,7 @@ In above command, note the following two aspects:
  - **TaskDefinitionName** which is the name of the task definition that one needs to provide
  - **container-definitions** which is used to provide information related with one or more containers which will be started as a result of executing task based on the task definition.
 
-One may want to login  and access the AWS console at Services/EC2 Container Service/Task Definitions and try and create task definition to understand different aspects of task definition creation.
+One may want to login  and access the AWS console at Services/EC2 Container Service/Task Definitions and try and create task definition to understand different aspects of task definition creation. Further details in relation with register-task-definition can be found on this page, [register-task-definition](http://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html)
 
 ### Create an ECS Cluster
 
@@ -92,7 +92,7 @@ As this is one time activity, one may want to use AWS console at Services/EC2 Co
 
 ### Create/Update the Service
 
-Once done with above steps
+Once done with creating cluster, one will be required to update ECS service. Further details in relation with update-service command can be found on this page, [update-service](http://docs.aws.amazon.com/cli/latest/reference/ecs/update-service.html)
 
 
 ## Configure Jenkins Post-steps
@@ -148,3 +148,6 @@ aws ecs update-service --cluster ClusterName --service ServiceName --task-defini
 ## Reference
 
  - [What is Amazon EC2 Container Service?](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+ - [AWS CLI Commands](http://docs.aws.amazon.com/cli/latest/reference/)
+ - [AWS ECS CLI Commands](http://docs.aws.amazon.com/cli/latest/reference/ecs/)
+ - [Using the Amazon ECS Command Line Interface](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.html)
