@@ -150,7 +150,7 @@ sudo docker tag ImageName:tag 153819127898.dkr.ecr.us-west-2.amazonaws.com/Image
 sudo docker push AWS_ECR_URL/ImageName:tag
 
 # Register task definition`
-aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"AWS_ECR_URL/ImageName:Tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+aws ecs register-task-definition --family TaskDefinitionFamily --container-definitions "[{\"name\":\"ContainerName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 
 # Update service
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
