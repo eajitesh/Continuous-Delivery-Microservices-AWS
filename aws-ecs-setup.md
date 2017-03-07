@@ -77,14 +77,14 @@ docker login -u AWS -p SomeRandomPasswordStringSentByAWS -e none https://**aws_a
 Next step is to create a task definition. Command such as following could be used to create the task definition:
 
 ```
-aws configure --profile default # Read the details under Create an Image Repository
-aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+aws ecs register-task-definition --family TaskDefinitionFamily --container-definitions "[{\"name\":\"ContainerName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 ```
 In above command, note the following two aspects:
- - **TaskDefinitionName** which is the name of the task definition that one needs to provide
+ - **TaskDefinitionFamily** is the name of family for a task definition, which allows you to track multiple versions of the same task definition. The family is used as a name for your task definition. 
+ - **ContainerName** which is the name of the container.
  - **container-definitions** which is used to provide information related with one or more containers which will be started as a result of executing task based on the task definition.
 
-One may want to login  and access the AWS console at Services/EC2 Container Service/Task Definitions and try and create task definition to understand different aspects of task definition creation. Further details in relation with register-task-definition can be found on this page, [register-task-definition](http://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html)
+One may want to login  and access the AWS console at Services/EC2 Container Service/Task Definitions and try and create task definition to understand different aspects of task definition creation. Further details in relation with register-task-definition can be found on this page, [register-task-definition](http://docs.aws.amazon.com/cli/latest/reference/ecs/register-task-definition.html).
 
 ### Create an ECS Cluster
 
@@ -92,7 +92,17 @@ As this is one time activity, one may want to use AWS console at Services/EC2 Co
 
 ### Create/Update the Service
 
-Once done with creating cluster, one will be required to update ECS service. Further details in relation with update-service command can be found on this page, [update-service](http://docs.aws.amazon.com/cli/latest/reference/ecs/update-service.html)
+Once done with creating cluster, one will be required to update ECS service. update-service command is used to modify the task definition and deploy a new version of the service.
+```
+aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
+```
+In above code snippet, note some of the following:
+ - **TaskDefinitionName** is name of the task definition. The family and revision (family:revision ) or full Amazon Resource Name (ARN) of the task definition to run in your service. If a revision is not specified, the latest ACTIVE revision is used. If you modify the task definition with update-service , Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.
+ - **ClusterName** is name of the ECS cluster
+ - **ServiceName** is name of the service
+ - **desired-count** is used to configure number of instantiations of the task to place and keep running in your service.
+
+Further details in relation with update-service command can be found on this page, [update-service](http://docs.aws.amazon.com/cli/latest/reference/ecs/update-service.html).
 
 
 ## Configure Jenkins Post-steps
@@ -115,16 +125,17 @@ sudo docker push ImageName:tag
 yes "" | aws configure --profile default ; aws ecr get-login > awslogin.sh ; sudo sh awslogin.sh
 
 # Register task definition`
-aws ecs register-task-definition --family TaskDefinitionName --container-definitions "[{\"name\":\"TaskDefinitionName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
+aws ecs register-task-definition --family TaskDefinitionFamily --container-definitions "[{\"name\":\"ContainerName\",\"image\":\"ImageName:tag\",\"memory\":300,\"portMappings\":[{\"hostPort\":0,\"containerPort\":8080,\"protocol\":\"tcp\"}]}]" 
 
 # Update service
 aws ecs update-service --cluster ClusterName --service ServiceName --task-definition TaskDefinitionName --desired-count 2
 ```
 In above code samples, note some of the following:
- - **ImageName:tag** should be replaced with image such as ajitesh/springboot-web-app:latest. 
- - **TaskDefinitionName** should be replaced with name of the task definition provided at the time of creating task definition using AWS ECS console.
- - **ClusterName** should be replaced with name of the ECS cluster
- - **ServiceName** should be replaced with name of the service
+ - **ImageName:tag** is the image name. For example, ajitesh/springboot-web-app:latest. 
+ - **TaskDefinitionFamily** is the name of family for a task definition, which allows you to track multiple versions of the same task definition. The family is used as a name for your task definition. 
+ - **ContainerName** which is the name of the container.
+ - **ClusterName** is the name of the ECS cluster
+ - **ServiceName** is the name of the service
 
 ### Pushing images to ECR; Register the task definition ; Update the ECS service
 ```
