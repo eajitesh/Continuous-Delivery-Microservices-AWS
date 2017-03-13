@@ -84,3 +84,11 @@ services:
     - /opt/gitlab/data:/var/opt/gitlab
 ```
 In case of running this docker-compose file on Linux/Ubuntu, change the volume under jenkins from "- /usr/local/bin/docker:/usr/bin/docker" to "- /usr/bin/docker:/usr/bin/docker"
+
+## Jenkins Image with AWS & EB Utility
+
+To be able to access the AWS and EB CLI commands from Jenkins, you may need to include the code for installing them in Jenkins Dockerfile. 
+
+Get the docker image for Jenkins with AWS & EB CLI utility from this page, [Docker image for Jenkins with AWS & EB CLI Utility](https://github.com/eajitesh/docker).
+
+This image also takes care of the issues such as (add jenkins to Sudoers file etc) in relation with executing Docker commands from within Jenkins as part of Post-steps. 
