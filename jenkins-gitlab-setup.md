@@ -83,3 +83,4 @@ services:
     - /opt/gitlab/logs:/var/log/gitlab
     - /opt/gitlab/data:/var/opt/gitlab
 ```
+In case of running this docker-compose file on Linux/Ubuntu, change the volume under jenkins from "- /usr/local/bin/docker:/usr/bin/docker" to "- /usr/bin/docker:/usr/bin/docker"
