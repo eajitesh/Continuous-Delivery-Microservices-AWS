@@ -17,8 +17,9 @@ This project is intended to provide information related with some of the followi
 ```
 1. Setup Gitlab and Jenkins
 2. Setup Dockerhub, AWS ECR
-3. Continuous Delivery using AWS ECS 
-4. Continuous Delivery using AWS Elastic Beanstalk 
+3. Containerize Springboot Microservice
+4. Continuous Delivery using AWS ECS 
+5. Continuous Delivery using AWS Elastic Beanstalk 
 ```
 ## Setup Gitlab and Jenkins
 
@@ -36,6 +37,10 @@ Next step is to create your account with image repository such as Dockerhub and 
 
 1. **Dockerhub**: Go to [Dockerhub](http://www.dockerhub.com) and get signed up. You will be using this credentials from within Jenkins to login to Dockerhub and push the images.
 2. **AWS**: Go to [AWS](http://www.aws.com) and get signed up. 
+
+## Containerize Springboot Microservice
+
+Springboot can be used to create microservice and Docker containers can be used to containerize them. Read further details on this page, [Containerize Springboot Microservice](https://github.com/eajitesh/Continuous-Delivery-Microservices-AWS/blob/master/containerize-springboot-microservice.md) 
 
 ## Continuous Delivery of Microservices on AWS using AWS ECS
 
